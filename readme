@@ -1,14 +1,3 @@
-docker building:
-sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install nginx -y
-sudo apt-get install nodejs -y
-sudo apt-get install npm -y
-
-npm install express --save
-necesar apache2 utils(apache-tools pe aur manjaro) pentru fişiere parolă
-
-
-
 Am făcut toate "paginile" care vor fi accesate de pe porturile 3000, 3001 şi 3002 cu node.js, în acelaşi fişier (aşa am înţeles că ar trebui)
 De notat, pentru testing purposes - paginile de pe 3000 3001 şi 3002 sunt accesibile, pentru a nu fi accesibile trebuie activat firewall pe serverul unde se hostează, să blocheze porturile.
 ~~~~~~~~~~~~~~~
@@ -22,8 +11,10 @@ Pe pagina de pe portul 3000 va fi un prompt de auth_basic implementat din /etc/n
 În momentul în care se realizează autentificarea, pentru deconectare momentan e necesară repornirea browser-ului (log out cu basic_auth am găsit că necesită nişte trickery care n-am implementat).
 https://stackoverflow.com/questions/233507/how-to-log-out-user-from-web-site-using-basic-authentication
 
+din folder-ul de git
+sudo cp nginx.conf /etc/nginx/nginx.conf
 
-utilizatori creaţi prin comenzile
+creaţi utilizatori prin comenzile
 sudo htpasswd -c /etc/nginx/.htpasswd Adriana
 password:Adriana
 sudo htpasswd /etc/nginx/.htpasswd Cristi
